@@ -4,28 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
-import android.app.Activity;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.quizapp.Models.QustionModel;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.ActivityQustionBinding;
-import com.example.quizapp.databinding.ActivitySetsBinding;
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
-
 public class QustionActivity extends AppCompatActivity {
 
     QustionModel[] list  = new QustionModel[5];
@@ -46,12 +40,9 @@ public class QustionActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
-
         restTimer();
         timer.start();
-
         String setName = getIntent().getStringExtra("set");
-
         if(setName.equals("مجموعة - 1")){
             setOne();
         }else if(setName.equals("مجموعة - 2")){
